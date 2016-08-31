@@ -1,0 +1,6 @@
+[submodule "fiware-device-simulator"]
+	path = fiware-device-simulator
+	url = https://github.com/GeographicaGS/fiware-device-simulator.git
+[submodule "urbo-pgsql-connector"]
+	path = urbo-pgsql-connector
+	url = https://github.com/GeographicaGS/urbo-pgsql-connector.git
