@@ -1,0 +1,19 @@
+simulator:
+  build: .
+  command: ./bin/fiwareDeviceSimulatorCLI -c ./urbo-waste_noarrays.json
+
+postgis:
+  image: geographica/postgis:awkward_aardvark
+  volumes_from:
+   - testsimulator_pgdata
+  volumes:
+   - ./:/usr/src
+  ports:
+   - "5438:5432"
+
+connector:
+  build: urbo-pgsql-connector/api
+  ports:
+   - "8085:3000"
+  links:
+   - postgis:postgis
